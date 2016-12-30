@@ -1,10 +1,10 @@
-import Vue from 'vue'
-import App from './App.vue'
-import routerConfig from './router'
+import Vue from 'vue';
+import App from './App';
+import routerConfig from './router';
 
-
+/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router: routerConfig,
-  render: h => h(App)
-})
+  render: h => h(App),
+});

@@ -52,4 +52,3 @@ UI工程师在wedis-frontend => src => pages 目录下找到自己负责的模�
 ##关于vue文件解释
   vue文件内<template></template>中写html; <style></style>中写css;
   如果没有运行项目，需要按照上面的命令运行项目，查看效果。
-
