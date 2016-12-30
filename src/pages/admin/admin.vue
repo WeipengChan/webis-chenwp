@@ -1,10 +1,10 @@
 
 <template>
-    <div>
-        <!-- Welcome to coding world! -->
-        <!-- 在这里写html -->
-        <h1>this is admin!</h1>
-    </div>
+<div>
+  <!-- Welcome to coding world! -->
+  <!-- 在这里写html -->
+  <h1>this is admin!</h1>
+</div>
 </template>
 
 <style>
@@ -15,7 +15,7 @@
 </style>
 
 <script>
-    export default {
-        
-    }
+export default {
+
+};
 </script>

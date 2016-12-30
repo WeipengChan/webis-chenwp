@@ -26,4 +26,4 @@ export default new VueRouter({
     path: '/redis-server-manager',
     component: redisServerManager
   }]
-})
+});
