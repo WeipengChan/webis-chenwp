@@ -1,11 +1,20 @@
 <template lang="html">
   <div class="">
-    hello,index
+    <SelectForm></SelectForm>
   </div>
 </template>
 
 <script>
-export default {};
+import SelectForm from './select'
+export default {
+  data() {
+    return {
+    }
+  },
+  components: {
+    SelectForm
+  }
+};
 </script>
 
 <style lang="css">
