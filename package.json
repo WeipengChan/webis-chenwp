@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@dm/reset.css": "^1.0.0",
+    "@dm/storage": "^1.0.0",
     "@dm/urlutils": "^1.0.4",
     "axios": "^0.15.3",
     "element-ui": "^1.1.5",
