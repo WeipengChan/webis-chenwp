@@ -1,11 +1,11 @@
 <template lang="html">
   <div class="">
-    <SelectForm class="serverform" :selectData="serverSelectData" :selecteditem="serverSelected" @showDbSelectForm="showDbSelectForm">
+    <SelectForm class="serverform" :selectData="serverSelectData" :selecteditem="serverSelected"  @updateSelectedItem="updateServer">
       <div class="select-item"> + Add redisserver</div>
     </SelectForm>
-    <SelectForm class="dbform" v-if="show" :selectData="dbSelectData" :selecteditem="dbSelected">
+    <SelectForm class="dbform" v-if="show" :selectData="dbSelectData" :selecteditem="dbSelected" @updateSelectedItem="updateDb">
     </SelectForm>
-    <SelectForm class="Categoryform" v-if="show" :selectData="CategorySelectData" :selecteditem="CategorySelected">
+    <SelectForm class="Categoryform" v-if="show" :selectData="CategorySelectData" :selecteditem="CategorySelected" @updateSelectedItem="updateCategory">
       <div class="select-item"> + Add category</div>
     </SelectForm>
     <div class="search">
@@ -34,25 +34,39 @@ export default {
       CategorySelectData: ['All Categories', 'string', 'hash', 'list'],
       CategorySelected: '',
 
-      show: false,
       keywords: '',
-      keyDetailsData: {}
+      keyDetailsData: {},
 
+      selectdServer: '',
+      selectedDb: '',
+      selectdCategory: ''
     };
   },
-  components: {
-    SelectForm,
-    KeyDetailsList
+  computed: {
+    show: function() {
+      if (this.selectdServer) {
+        return true;
+      }
+    }
   },
   methods: {
-    showDbSelectForm(e) {
-      if (e === 'show') {
-        this.show = true;
-      }
+    updateServer(e) {
+      this.selectdServer = e;
+      console.log(this.selectdServer);
+    },
+    updateDb(e) {
+      this.selectedDb = e;
+    },
+    updateCategory(e) {
+      this.selectdCategory = e;
     },
     searchKeywords() {
       console.log(this.keywords);
     }
+  },
+  components: {
+    SelectForm,
+    KeyDetailsList
   }
 };
 </script>

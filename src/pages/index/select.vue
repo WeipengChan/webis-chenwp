@@ -7,7 +7,7 @@
     </div>
     <slot></slot>
     <ul v-if="fold">
-      <li class="select-item" v-for="item in selectData" @click="selectItem(item)">{{item}}</li>
+      <li class="select-item" v-for="item in selectData" @click="updateSelectedItem(item)">{{item}}</li>
     </ul>
   </div>
 </template>
@@ -22,9 +22,9 @@ export default {
     };
   },
   methods: {
-    selectItem(item) {
+    updateSelectedItem(item) {
       this.selected = item;
-      this.$emit('showDbSelectForm', 'show');
+      this.$emit('updateSelectedItem', item);
     },
     foldForm() {
       this.fold = !this.fold;
