@@ -8,15 +8,19 @@
     <SelectForm class="Categoryform" v-if="show" :selectData="CategorySelectData" :selecteditem="CategorySelected">
       <div class="select-item"> + Add category</div>
     </SelectForm>
-    <div class="search"></div>
-    <ul>
+    <div class="search">
+      <input type="text" name="search" v-model="keywords" @keyup.enter="searchKeywords">
+    </div>
+    <ul class="key-list">
       <li></li>
     </ul>
+    <KeyDetailsList class="key-details-list" :keyDetailsData="keyDetailsData"></KeyDetailsList>
   </div>
 </template>
 
 <script>
 import SelectForm from './select';
+import KeyDetailsList from './key-details';
 
 export default {
   data() {
@@ -30,18 +34,24 @@ export default {
       CategorySelectData: ['All Categories', 'string', 'hash', 'list'],
       CategorySelected: '',
 
-      show: false
+      show: false,
+      keywords: '',
+      keyDetailsData: {}
 
     };
   },
   components: {
-    SelectForm
+    SelectForm,
+    KeyDetailsList
   },
   methods: {
     showDbSelectForm(e) {
       if (e === 'show') {
         this.show = true;
       }
+    },
+    searchKeywords() {
+      console.log(this.keywords);
     }
   }
 };
@@ -54,5 +64,9 @@ export default {
 }
 .dbform {
   display: inline-block;
+}
+
+.key-details-list {
+  float:right;
 }
 </style>
